@@ -14,6 +14,7 @@ class Median
     index = @sorted.index n
     return 'Wrong!' if index.nil?
     @sorted.delete_at index
+    return 'Wrong!' if @sorted.empty?
 
     to_s
   end
@@ -31,15 +32,15 @@ class Median
   end
 end
 
-# # Driver
-# median = Median.new
-# n = STDIN.readline.to_i
-# n.times do
-#   command, x = STDIN.readline.split ' '
-#   case command
-#   when 'a'
-#     puts median.add x.to_i
-#   when 'r'
-#     puts median.remove x.to_i
-#   end
-# end
+# Driver
+median = Median.new
+n = STDIN.readline.to_i
+n.times do
+  command, x = STDIN.readline.split ' '
+  case command
+  when 'a'
+    puts median.add x.to_i
+  when 'r'
+    puts median.remove x.to_i
+  end
+end

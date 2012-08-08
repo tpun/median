@@ -53,6 +53,12 @@ describe 'Median' do
 
         (subject.remove 1).should == '1.5'
       end
+
+      it 'remvoes and outputs Wrong! if last number is removed' do
+        subject.add 1
+
+        (subject.remove 1).should == 'Wrong!'
+      end
     end
   end
 end
