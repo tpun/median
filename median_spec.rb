@@ -47,9 +47,12 @@ describe 'Median' do
 
     context 'when the input is in the list' do
       it 'removes input and output median' do
-        subject.add 10
-        subject.add 20
-        subject.add 30
+        subject.add 1
+        subject.add 2
+        subject.add 1
+
+        (subject.remove 1).should == '1.5'
+      end
     end
   end
 end

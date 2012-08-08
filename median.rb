@@ -11,7 +11,11 @@ class Median
   end
 
   def remove n
-    return 'Wrong!' unless @sorted.include? n
+    index = @sorted.index n
+    return 'Wrong!' if index.nil?
+    @sorted.delete_at index
+
+    to_s
   end
 
   def to_s
@@ -26,3 +30,16 @@ class Median
     end
   end
 end
+
+# # Driver
+# median = Median.new
+# n = STDIN.readline.to_i
+# n.times do
+#   command, x = STDIN.readline.split ' '
+#   case command
+#   when 'a'
+#     puts median.add x.to_i
+#   when 'r'
+#     puts median.remove x.to_i
+#   end
+# end
