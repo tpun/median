@@ -2,6 +2,9 @@ require_relative './median.rb'
 describe 'Median' do
   subject { Median.new }
 
+  describe '#to_s' do
+  end
+
   describe '#add' do
     context 'when the list is odd number of numbers' do
       it 'adds input and outputs the middle number' do
@@ -43,7 +46,10 @@ describe 'Median' do
     end
 
     context 'when the input is in the list' do
-      it 'removes input and output median'
+      it 'removes input and output median' do
+        subject.add 10
+        subject.add 20
+        subject.add 30
     end
   end
 end

@@ -7,6 +7,14 @@ class Median
     @sorted << n
     @sorted.sort!
 
+    to_s
+  end
+
+  def remove n
+    return 'Wrong!' unless @sorted.include? n
+  end
+
+  def to_s
     if @sorted.length.odd?
       return @sorted[@sorted.length/2].to_s
     else
@@ -16,9 +24,5 @@ class Median
       median = median.to_i if median.to_i==median
       return median.to_s
     end
-  end
-
-  def remove n
-    return 'Wrong!' unless @sorted.include? n
   end
 end
